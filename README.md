@@ -3,7 +3,7 @@
 A working, end-to-end proof of concept for the University Chapters data
 product described in the accompanying HLD (`University_Chapters_HLD_Runbook.docx`).
 Every component below is deployed and has been verified running for real
-on GCP — not just designed on paper.
+on GCP.
 
 ## What this proves
 
@@ -102,8 +102,8 @@ query, not a surprise bill.
 
 ## What's intentionally not included
 
-- **`docker-compose.yml` for fully offline local execution** — optional
-  per the assessment (Task 6); the real Cloud Run deployment above already
+- **`docker-compose.yml` for fully offline local execution** —
+  the real Cloud Run deployment above already
   demonstrates the working pipeline end to end, which this POC prioritised
   over a separate offline demo path.
 - **Clustering, surrogate keys** on BigQuery tables — considered and
