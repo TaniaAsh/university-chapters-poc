@@ -1,0 +1,24 @@
+name: 'university_chapters'
+version: '1.0.0'
+config-version: 2
+
+profile: 'university_chapters'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  university_chapters:
+    staging:
+      +materialized: view
+      +schema: university_ch_raw
+    curated:
+      +materialized: table
+      +schema: university_ch_curated
+    published:
+      +materialized: view
+      +schema: university_ch_published

@@ -1,0 +1,36 @@
+# --- Terraform ---
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+terraform/*.tfplan
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Secrets / local config ---
+.env
+.env.*
+*.key
+*.pem
+credentials.json
+service-account.json
+service_account.json
+*-credentials.json
+*-service-account.json
+
+# --- Local data (POC landing-zone stand-in for GCS) ---
+data/
+
+# --- dbt ---
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+dbt_project/profiles.yml
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db

@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: chapter_snapshot
+    description: >
+      Cleaned, validated, deduplicated canonical representation of
+      university chapters. One row per chapter_id per snapshot_date.
+    columns:
+      - name: chapter_id
+        description: Business key (declared PK, NOT ENFORCED - see HLD ADR-007).
+        tests:
+          - unique
+          - not_null
+      - name: chapter_name
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: state
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['CA', 'OR', 'WA']
+      - name: latitude
+        tests:
+          - not_null
+      - name: longitude
+        tests:
+          - not_null
+      - name: location
+        description: GEOGRAPHY point derived from latitude/longitude.
+      - name: snapshot_date
+        tests:
+          - not_null
+      - name: run_id
+        tests:
+          - not_null

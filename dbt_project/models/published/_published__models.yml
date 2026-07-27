@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: university_chapters_v1
+    description: >
+      Stable, versioned published interface for the University Chapters
+      data product. Consumers should query this view, never raw or
+      curated tables directly (see HLD Data Product Contract, section 5).
+    columns:
+      - name: chapter_id
+        tests:
+          - unique
+          - not_null
+      - name: chapter_name
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: state
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['CA', 'OR', 'WA']
+      - name: as_of_date
+        tests:
+          - not_null
